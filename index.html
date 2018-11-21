@@ -1,29 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-<title>Homework</title>
-<style>
-.top {background-color: black; color: grey;padding: 30px; padding-left:40px;}
-h1 {margin: 0  auto;}
-p {margin: 0 auto;}
-.mountain-1 {width: 960px; margin-top: 20px;}
-img {width: 100%;}
-.mountain-2 {width: 30% ; display: inline-block; margin-bottom: 20px; margin: 1.5%;}
-</style>
-    </head>
-<body>
-    <div class="top"><h1>Homework</h1>
-    <p>This is our first page</p></div>
-    <div class="mountain-1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg" alt="picture of lake" /></div>
-    <div class="all"><div class="mountain-2">
-    <img src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg" alt="mountains 1" />
-<h3>Image Nr.1</h3>
-<p>Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum pulvinar.</p></div>
-       <div class="mountain-2">
-      <img src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg" alt="mountains 2" /><h3>Image Nr.2</h3>
-      <p>Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum pulvinar.</p></div>
-    <div class="mountain-2"><img src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg" alt="mountains 3" /><h3>Image Nr.3</h3>
-        <p>Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum pulvinar.</p>
-    </div></div>
-</body>
+  <head>
+    <title>Homework</title>
+    <style>
+      /*
+        CSS Velams rakstit atseviska faila kuru pec tam piesledz HTML ar
+        <link rel="stylesheet" href="mapite_kur_atrodas/stila.css" />
+      */
+
+      /*
+        Nonemam body margin lai lapa sakas no ekrana malam.
+      */
+      body {
+        margin: 0;
+      }
+      /*
+        Seit isti mes negribam visu h1 un p1 bloku ka tadu centret
+        seit vienkarsi mes gribam nonemts margin no h1 un p un ta ka
+        mes to griba izdarit gan h1 gan p mes varam abiem reize uzlikt stilu
+        izmantojot selektory h1, p
+      */
+      h1,
+      p {
+        margin: 0;
+      }
+      img {
+        width: 100%;
+      }
+      .top {
+        background-color: black;
+        color: grey;
+        padding: 30px;
+        padding-left: 40px;
+      }
+      /*
+        Izveidoju .container div kurs satures visu lapas saturu lai smuki visu iecentretu
+        lapas vidu
+      */
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .mountain-1 {
+        margin: 20px 5px 0px;
+      }
+      /*
+        Hacks lai izvairitos no nevelamam atstarpem starp inline-block elementiem.
+        Uzliekam konteinerim kas satur musu tris mazos article blokus, font-size: 0
+        un pec tam katram blokam atseviski uzliekam sakotnejo fonta izmeru izmantojot
+        font-size: initial
+        https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+      */
+      .all {
+        font-size: 0;
+      }
+      /*
+        Lai vieglak aprekinat cik tad ir kopejais bloka platums izmantojam box-sizing: border-box
+        so gan butu ieteicams uzlikt visiem elementiem izmantojot
+
+        html {
+          box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        bet saja gadijuma, sadi ir ok :)
+        ka ari izmantojam width: 33.33%, lai katrs bloks aiznem tiesi vienu tresdalu.
+      */
+      .mountain-2 {
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: initial;
+        padding: 5px;
+        width: 33.33%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <!--
+        Seit izmantojam to pasu .container div ko izmantojam saturam
+        lai virsraksts butu preti bildes kreisajai pusei
+      -->
+      <div class="container">
+        <h1>Homework</h1>
+        <p>This is our first page</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mountain-1">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg"
+          alt="picture of lake"
+        />
+      </div>
+      <div class="all">
+        <div class="mountain-2">
+          <img
+            src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg"
+            alt="mountains 1"
+          />
+          <h3>Image Nr.1</h3>
+          <p>
+            Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum
+            pulvinar.
+          </p>
+        </div>
+        <div class="mountain-2">
+          <img
+            src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg"
+            alt="mountains 2"
+          />
+          <h3>Image Nr.2</h3>
+          <p>
+            Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum
+            pulvinar.
+          </p>
+        </div>
+        <div class="mountain-2">
+          <img
+            src="https://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg"
+            alt="mountains 3"
+          />
+          <h3>Image Nr.3</h3>
+          <p>
+            Ut lobortis leo in varius accumsan. Vestibulum fermentum dictum
+            pulvinar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
